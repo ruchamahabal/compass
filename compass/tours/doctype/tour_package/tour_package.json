@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:package_name",
+ "creation": "2025-11-18 01:34:56.119471",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "package_name",
+  "destination",
+  "duration_in_days",
+  "price",
+  "column_break_tipy",
+  "max_group_size",
+  "image",
+  "section_break_zfae",
+  "description",
+  "section_break_njei",
+  "itinerary"
+ ],
+ "fields": [
+  {
+   "fieldname": "package_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Package Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Destination",
+   "options": "Destination"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "column_break_tipy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "section_break_zfae",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Short Description"
+  },
+  {
+   "fieldname": "section_break_njei",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "itinerary",
+   "fieldtype": "Text Editor",
+   "label": "Itinerary"
+  },
+  {
+   "fieldname": "duration_in_days",
+   "fieldtype": "Int",
+   "label": "Duration (in days)"
+  },
+  {
+   "default": "10",
+   "fieldname": "max_group_size",
+   "fieldtype": "Int",
+   "label": "Max Group Size"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-18 05:13:20.573933",
+ "modified_by": "Administrator",
+ "module": "Tours",
+ "name": "Tour Package",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
