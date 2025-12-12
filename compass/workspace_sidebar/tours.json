@@ -1,0 +1,64 @@
+{
+ "app": "compass",
+ "creation": "2025-12-11 20:58:14.753733",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "compass",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "customer",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Customer",
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "map-pin-check-inside",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Destination",
+   "link_to": "Destination",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "list-alt",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Tour Package",
+   "link_to": "Tour Package",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "calendar-check-2",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Booking",
+   "link_to": "Booking",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-12-11 20:58:53.980610",
+ "modified_by": "Administrator",
+ "module": "Tours",
+ "name": "Tours",
+ "owner": "Administrator",
+ "title": "Tours"
+}
