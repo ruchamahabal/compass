@@ -3,7 +3,7 @@
 
 import frappe
 from frappe import _
-from frappe.utils import flt
+from frappe.utils import flt, cint, get_link_to_form
 from frappe.model.document import Document
 
 
@@ -16,19 +16,22 @@ class Booking(Document):
 		max_group_size = frappe.db.get_value(
 			"Tour Package", self.tour_package, "max_group_size"
 		)
+		if not max_group_size:
+			return
+
 		bookings = frappe.qb.get_query(
 			"Booking",
 			fields=[{"SUM": "number_of_travellers", "as": "number_of_travellers"}],
-			filters={"tour_package": self.tour_package, "docstatus": ("!=", 2)}
+			filters={"tour_package": self.tour_package, "docstatus": ("!=", 2), "name": ("!=", self.name)}
 		).run(pluck=True)[0] or 0
 
-		if bookings >= max_group_size:
-			frappe.throw(
-				_("Cannot book {0}. Maximum group size of {1} has been reached.").format(
-					self.tour_package, max_group_size
-				),
-				title=_("Booking Unavailable"),
+		if (bookings + self.number_of_travellers) > max_group_size:
+			available_slots = max_group_size - bookings
+			message = _("Cannot book the Tour Package {0}. Only {1} slot(s) available.").format(
+				frappe.bold(self.tour_package), frappe.bold(cint(available_slots))
 			)
+			message += "<br>" + _("You can update the {0} here: {1}").format(frappe.bold(_("Max Group Size")), get_link_to_form("Tour Package", self.tour_package))
+			frappe.throw(message, title=_("Booking Unavailable"))
 
 	def set_total_amount(self):
 		self.total_amount = flt(self.price * self.number_of_travellers)
